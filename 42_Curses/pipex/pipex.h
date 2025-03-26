@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makboga <makboga@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:11:53 by makboga           #+#    #+#             */
-/*   Updated: 2025/03/20 16:50:02 by makboga          ###   ########.fr       */
+/*   Created: 2025/03/25 13:25:12 by makboga           #+#    #+#             */
+/*   Updated: 2025/03/26 16:00:48 by makboga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef PIPEX_H
+# define PIPEX_H
+
 # include <unistd.h>
-# include <fcntl.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <sys/wait.h>
+# include "libft/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+int		open_file(char *av, int a);
+void	*path_split(char *cmd, char **env);
+void	ft_free(char **rafa);
 
-char	*get_next_line(int fd);
-char	*f_strchr(const char *str, int c);
-char	*f_strjoin(char *s1, char *s2);
-size_t	f_strlen(const char *str);
-char	*f_strdup(const char *s1);
-char	*f_substr(char *s, unsigned int start, size_t len);
-char	*strappend(char **str, char *str2);
-char	*get_data(char **backup, int fd);
 #endif
